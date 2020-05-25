@@ -64,8 +64,7 @@ class ClientThread(threading.Thread):
                 r = requests.get(url, parameters)
 
                 #send response
-                response = make_http_response(200, version, r.text)
-                
+                response = make_http_response(200, version, r.text)                
                 self.csocket.send(response.encode("utf-8"))
                 
 
